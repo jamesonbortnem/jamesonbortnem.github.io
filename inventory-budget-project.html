@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventory Dashboard | Jameson Bortnem</title>
+  <style>
+    :root {
+      --bg: #f5f3ef;
+      --surface: #ffffff;
+      --text: #1f1f1f;
+      --muted: #666666;
+      --accent: #0b5f75;
+      --accent-dark: #084c5d;
+      --border: #dedad4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-top: 0;
+      margin-bottom: 16px;
+      max-width: 760px;
+    }
+
+    .intro {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .button-group {
+      margin-bottom: 48px;
+    }
+
+    .button-group a {
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .button-secondary {
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-bottom: 48px;
+    }
+
+    .summary-card,
+    .content-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .summary-card h3,
+    .content-card h2 {
+      margin-top: 0;
+    }
+
+    section {
+      margin-bottom: 24px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .content-card p:last-child,
+    .content-card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px 56px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="brand">Jameson Bortnem</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="https://www.linkedin.com/in/jamesonbortnem/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/jamesonbortnem" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="eyebrow">Project Case Study</div>
+    <h1>Inventory Dashboard</h1>
+    <p class="intro">
+      An Excel-based inventory dashboard built to improve inventory visibility, support ordering decisions, and reduce inefficiencies in a real operating environment.
+    </p>
+
+    <div class="button-group">
+      <a class="button-primary" href="index.html">Back to Portfolio</a>
+      <a class="button-secondary" href="#">GitHub Repo</a>
+    </div>
+
+    <section class="summary-grid">
+      <div class="summary-card">
+        <h3>Project Type</h3>
+        <p>Excel dashboard and operations analysis project</p>
+      </div>
+      <div class="summary-card">
+        <h3>Focus</h3>
+        <p>Inventory tracking, reporting efficiency, and order planning</p>
+      </div>
+      <div class="summary-card">
+        <h3>Tools</h3>
+        <p>Microsoft Excel, formulas, dashboard design, inventory analysis</p>
+      </div>
+      <div class="summary-card">
+        <h3>Context</h3>
+        <p>Built around a real business need rather than a classroom-only exercise</p>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <h2>Problem</h2>
+      <p>
+        This project was created to address a manual inventory process that was time-consuming and difficult to use for quick decision-making. Paper-based inventory checks took more than an hour, and the process made it harder to manage stock levels, budget concerns, and ingredient overordering.
+      </p>
+    </section>
+
+    <section class="content-card">
+      <h2>Solution</h2>
+      <p>
+        I built an Excel dashboard to organize inventory information into a clearer and more useful format. The dashboard was designed to track stock levels, flag low-stock items, and support better ordering decisions with faster access to the most important information.
+      </p>
+    </section>
+
+    <section class="content-card">
+      <h2>What the dashboard does</h2>
+      <ul>
+        <li>Tracks inventory levels in one place</li>
+        <li>Highlights low-stock items that need attention</li>
+        <li>Supports order planning based on inventory needs and demand</li>
+        <li>Improves visibility compared with manual inventory review</li>
+        <li>Creates a more structured process for reporting and decision-making</li>
+      </ul>
+    </section>
+
+    <section class="content-card">
+      <h2>Outcome</h2>
+      <p>
+        The project was designed to reduce waste, improve ordering efficiency, and make inventory review faster and easier to use. It reflects my interest in practical finance and analysis work that helps people make better operational decisions.
+      </p>
+    </section>
+
+    <section class="content-card">
+      <h2>Why this project matters</h2>
+      <p>
+        This project demonstrates more than spreadsheet formatting. It shows how I approach a real business problem, turn raw operational information into a usable tool, and build something that supports clearer decisions. That combination of analysis, structure, and communication is central to the kind of finance and advising work I want to pursue.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Jameson Bortnem
+  </footer>
+</body>
+</html>
