@@ -3,19 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jameson Bortnem Portfolio</title>
+  <title>Jameson Bortnem | Portfolio</title>
   <style>
     :root {
-      --bg: #f7f7f5;
+      --bg: #f5f3ef;
+      --surface: #ffffff;
       --text: #1f1f1f;
-      --muted: #5f5f5f;
+      --muted: #666666;
       --accent: #0b5f75;
-      --card: #ffffff;
-      --border: #dddddd;
+      --accent-dark: #084c5d;
+      --border: #dedad4;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -26,134 +31,209 @@
       line-height: 1.6;
     }
 
+    a {
+      color: inherit;
+    }
+
     header {
-      background: white;
+      background: rgba(255, 255, 255, 0.92);
       border-bottom: 1px solid var(--border);
-      padding: 20px 40px;
+      position: sticky;
+      top: 0;
     }
 
     nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      margin-left: 20px;
-      font-weight: bold;
-    }
-
-    .hero {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 80px 40px 40px;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      max-width: 700px;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .buttons {
-      margin-top: 30px;
-    }
-
-    .buttons a {
-      display: inline-block;
-      margin-right: 12px;
-      margin-bottom: 12px;
-      padding: 12px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .secondary {
-      border: 1px solid var(--border);
-      color: var(--text);
-      background: white;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 30px 40px 60px;
-    }
-
-    h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 20px;
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
     }
 
-    .card h3 {
+    .nav-links a {
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 88px 24px 48px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin: 0 0 18px;
+      max-width: 700px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 0 28px;
+    }
+
+    .button-group a {
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .button-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .hero-card h2 {
       margin-top: 0;
       margin-bottom: 10px;
+      font-size: 22px;
     }
 
-    .card p {
+    .hero-card p {
+      margin: 0;
+      font-size: 16px;
       color: var(--muted);
-      margin-bottom: 15px;
     }
 
-    .card a {
-      color: var(--accent);
-      font-weight: bold;
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 24px 72px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      margin: 0 0 12px;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .project-card a {
       text-decoration: none;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .about-box,
+    .skills-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .skills-box ul {
+      margin: 0;
+      padding-left: 18px;
     }
 
     footer {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 20px 40px 60px;
+      padding: 0 24px 56px;
       color: var(--muted);
       font-size: 14px;
     }
 
-    @media (max-width: 700px) {
-      .hero h1 {
-        font-size: 34px;
+    @media (max-width: 850px) {
+      .hero,
+      .about-grid {
+        grid-template-columns: 1fr;
       }
 
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 640px) {
       nav {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      nav div {
-        margin-top: 10px;
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 16px;
       }
 
-      nav a {
-        margin-left: 0;
-        margin-right: 15px;
+      .hero {
+        padding-top: 56px;
       }
     }
   </style>
@@ -161,8 +241,8 @@
 <body>
   <header>
     <nav>
-      <strong>Jameson Bortnem</strong>
-      <div>
+      <div class="brand">Jameson Bortnem</div>
+      <div class="nav-links">
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
         <a href="https://www.linkedin.com/in/jamesonbortnem/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -173,39 +253,52 @@
 
   <main>
     <section class="hero">
-      <h1>Finance student building Excel, data, and business analysis projects.</h1>
-      <p>
-        I’m Jameson Bortnem, a finance student at the University of Oregon focused on practical projects in Excel, reporting, and data-driven decision-making.
-      </p>
-      <div class="buttons">
-        <a class="primary" href="#projects">View Projects</a>
-        <a class="secondary" href="#">View Resume</a>
+      <div>
+        <h1>Finance student building practical tools for analysis, planning, and decision-making.</h1>
+        <p>
+          I’m Jameson Bortnem, a Business Administration student at the University of Oregon with a concentration in finance. My projects focus on Excel, business analysis, and financial decision support.
+        </p>
+        <div class="button-group">
+          <a class="button-primary" href="#projects">View Projects</a>
+          <a class="button-secondary" href="#about">About Me</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h2>Current focus</h2>
+        <p>
+          I am building a portfolio of finance and analytics projects that demonstrate spreadsheet modeling, operational analysis, and investment thinking for internship opportunities.
+        </p>
       </div>
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects">
-        <div class="card">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-intro">
+        These projects highlight different areas of my interest in finance and analysis, including operations, retirement planning, and startup investment screening.
+      </p>
+
+      <div class="projects-grid">
+        <div class="project-card">
           <h3>Inventory Dashboard</h3>
           <p>
-            Excel-based dashboard for tracking stock levels, low-stock items, and ordering decisions.
+            Excel-based inventory dashboard built to track stock levels, flag low-stock items, and support better ordering decisions in a real operating environment.
           </p>
           <a href="#">View Project</a>
         </div>
 
-        <div class="card">
-          <h3>Financial Modeling Project</h3>
+        <div class="project-card">
+          <h3>Retirement Planner</h3>
           <p>
-            A finance-focused project demonstrating modeling, analysis, and business decision support.
+            A retirement planning model designed to project savings growth, contribution scenarios, and long-term financial outcomes.
           </p>
           <a href="#">Coming Soon</a>
         </div>
 
-        <div class="card">
-          <h3>Data Analysis Project</h3>
+        <div class="project-card">
+          <h3>Startup Portfolio Screener</h3>
           <p>
-            A project focused on organizing data, finding insights, and presenting results clearly.
+            A screening tool for evaluating startup opportunities using portfolio fit, risk considerations, and investment-focused decision criteria.
           </p>
           <a href="#">Coming Soon</a>
         </div>
@@ -213,10 +306,28 @@
     </section>
 
     <section id="about">
-      <h2>About</h2>
-      <p>
-        I am a Business Administration student at the University of Oregon with a concentration in finance and interests in Excel, financial analysis, and data-driven problem solving.
-      </p>
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-box">
+          <p>
+            I am a third-year student at the University of Oregon studying Business Administration with a concentration in finance. I’m especially interested in financial modeling, Excel-based analysis, and projects that turn data into clearer business decisions.
+          </p>
+          <p>
+            My portfolio is built around practical work that reflects how finance and analysis apply in real settings, from inventory operations to personal finance planning and investment screening.
+          </p>
+        </div>
+
+        <div class="skills-box">
+          <h3>Skills</h3>
+          <ul>
+            <li>Excel</li>
+            <li>Financial analysis</li>
+            <li>Dashboard design</li>
+            <li>Business problem solving</li>
+            <li>Data-driven decision support</li>
+          </ul>
+        </div>
+      </div>
     </section>
   </main>
 
